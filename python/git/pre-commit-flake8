@@ -1,0 +1,11 @@
+#!/bin/bash
+cd QA
+
+errors=$( {{path to flake 8}}  --config ./flake8.ini)
+if [[ $errors ]]
+then
+    echo ++++++++++++++++++++++++++ Flake8 errors +++++++++++++++++++++++++++++++++++++
+    echo $errors
+    echo ==============================================================================
+    exit 1
+fi
