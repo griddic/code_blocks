@@ -136,9 +136,9 @@ function create_table_for_document(cost_matrix, aggregated, percentages) {
     <table>
     <tr>
         <td> </td>
-        <td>equity_type: ___</td>
-        <td>stocks__________</td>
-        <td>bonds___________</td>
+        <td>equity_type</td>
+        <td>stocks</td>
+        <td>bonds</td>
         <td>cash</td>
     </tr>
     <tr>
@@ -166,6 +166,8 @@ function create_table_for_document(cost_matrix, aggregated, percentages) {
 </table>
 `
     var table = document.createElement('table')
+    table.setAttribute('border', '3')
+    table.setAttribute('width', '100%')
     table.innerHTML = html
     return table
 }
