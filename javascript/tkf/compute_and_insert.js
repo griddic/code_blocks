@@ -135,33 +135,33 @@ function create_table_for_document(cost_matrix, aggregated, percentages) {
     var html = `
     <table>
     <tr>
-        <td> </td>
-        <td>equity_type</td>
-        <td>stocks</td>
-        <td>bonds</td>
-        <td>cash</td>
+        <td align="center"> </td>
+        <td align="center">equity_type</td>
+        <td align="center">stocks</td>
+        <td align="center">bonds</td>
+        <td align="center">cash</td>
     </tr>
     <tr>
-        <td>currency        </td>
-        <td> </td>
-        <td>${aggregated['stock'].toFixed(2)} (${percentages['stock'].toFixed(0)}%) </td>
-        <td>${aggregated['bond'].toFixed(2)} (${percentages['bond'].toFixed(0)}%) </td>
-        <td>${aggregated['cash'].toFixed(2)} (${percentages['cash'].toFixed(0)}%) </td>
+        <td align="center">currency</td>
+        <td align="center"> </td>
+        <td align="center">${aggregated['stock'].toFixed(2)} (${percentages['stock'].toFixed(0)}%) </td>
+        <td align="center">${aggregated['bond'].toFixed(2)} (${percentages['bond'].toFixed(0)}%) </td>
+        <td align="center">${aggregated['cash'].toFixed(2)} (${percentages['cash'].toFixed(0)}%) </td>
 
     </tr>
     <tr>
-        <td>USD</td>
-        <td>15(30%)</td>
-        <td>${cost_matrix[stock][usd].toFixed(2)}</td>
-        <td>${cost_matrix[bond][usd].toFixed(2)}</td>
-        <td>${cost_matrix[cash][usd].toFixed(2)}</td>
+        <td align="center">USD</td>
+        <td align="center">${aggregated[usd].toFixed(2)} (${percentages[usd].toFixed(0)}%) </td>
+        <td align="center">${cost_matrix[stock][usd].toFixed(2)}</td>
+        <td align="center">${cost_matrix[bond][usd].toFixed(2)}</td>
+        <td align="center">${cost_matrix[cash][usd].toFixed(2)}</td>
     </tr>
     <tr>
-        <td>RUR</td>
-        <td>35(70%)</td>
-        <td>${cost_matrix[stock][rub].toFixed(2)}</td>
-        <td>${cost_matrix[bond][rub].toFixed(2)}</td>
-        <td>${cost_matrix[cash][rub].toFixed(2)}</td>
+        <td align="center">RUR</td>
+        <td align="center">${aggregated[rub].toFixed(2)} (${percentages[rub].toFixed(0)}%) </td>
+        <td align="center">${cost_matrix[stock][rub].toFixed(2)}</td>
+        <td align="center">${cost_matrix[bond][rub].toFixed(2)}</td>
+        <td align="center">${cost_matrix[cash][rub].toFixed(2)}</td>
     </tr>
 </table>
 `
