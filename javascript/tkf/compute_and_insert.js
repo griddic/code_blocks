@@ -166,6 +166,7 @@ function create_table_for_document(cost_matrix, aggregated, percentages) {
 </table>
 `
     var table = document.createElement('table')
+    table.setAttribute('id', 'percentages_table')
     table.setAttribute('border', '3')
     table.setAttribute('width', '100%')
     table.innerHTML = html
@@ -173,8 +174,13 @@ function create_table_for_document(cost_matrix, aggregated, percentages) {
 }
 
 function add_to_header(el){
-    var header = document.querySelector('[data-qa-file="BrokerAccountsHeaderPure"]')
-    header.appendChild(el)
+    var current_table = document.getElementById('percentages_table')
+    if (current_table == null) {
+        var header = document.querySelector('[data-qa-file="BrokerAccountsHeaderPure"]')
+        header.appendChild(el)
+    } else {
+        current_table.innerHTML = el.innerHTML
+    }
 }
 
 var cost_by_type_and_currency = compute_cost_martix()
