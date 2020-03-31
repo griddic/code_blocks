@@ -29,7 +29,7 @@ def pytest_fixture_setup(fixturedef, request):
 def pytest_fixture_post_finalizer(fixturedef, request):
     if not request.node.nodeid:
         return
-    if not hasattr(fixturedef, 'cached_result'):
+    if getattr(fixturedef, 'cached_result', None) is None:
         return
     file_path = construct_file_path(fixturedef, request)
     with open(file_path, 'wb') as outt:
