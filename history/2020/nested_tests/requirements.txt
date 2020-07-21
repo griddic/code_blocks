@@ -1,0 +1,7 @@
+selenium==3.141.0
+pytest==5.2.1
+pagium==0.0.15 # "pip install wheel" shoud be executed before
+pytz==2020.1
+pytest-allure-adaptor2>=1.8.1,<1.9
+pytest-allure-dsl==0.0.13
+pytest-subtests==0.3.1
