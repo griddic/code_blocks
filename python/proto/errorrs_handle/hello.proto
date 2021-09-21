@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package upper;
+
+option go_package = "github.com/griddic/grpc_playground";
+
+
+service Upper {
+  rpc Up (Player) returns (Player) {};
+};
+
+message Player {
+  string name = 1;
+}

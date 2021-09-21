@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package upper;
+
+option go_package = "github.com/griddic/grpc_playground";
+
+
+service Hier {
+  rpc Hi (Player) returns (Greetings) {};
+};
+
+message Player {
+  string name = 1;
+}
+
+message Greetings {
+  string greet = 1;
+}
