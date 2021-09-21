@@ -6,9 +6,15 @@ option go_package = "github.com/griddic/grpc_playground";
 
 
 service Upper {
-  rpc Up (Player) returns (Player) {};
+  rpc ListThousand (ListRequests) returns (Numbers) {};
 };
 
-message Player {
-  string name = 1;
+message ListRequests {
+  int64 page_size = 2;
+  string page_token = 3;
+  string filters = 4;
+}
+message Numbers {
+  repeated int64 nums = 1;
+  string next_page_token = 2;
 }
