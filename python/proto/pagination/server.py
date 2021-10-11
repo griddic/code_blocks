@@ -50,7 +50,6 @@ class Pager1:
             if filter_hash != self.filter_hash:
                 raise InvalidPageRequest('following page request should be with the same filter')
         self._page_size = page_size
-
         self._shift = None
 
     @property
@@ -66,7 +65,7 @@ class Pager1:
         decrypted = self.crypter.decrypt(decoded.decode('utf-8'))
         return json.loads(decrypted)
 
-    def shift(self, shift):
+    def set_shift(self, shift):
         self._shift = shift
 
     @property
@@ -100,11 +99,14 @@ class Greeter(hello_pb2_grpc.UpperServicer):
         pager = Pager1(request.page_token, request.page_size or 100, request.filters, Crypter())
 
         nums = list(range(pager.offset, min(pager.offset + pager.page_size, 1000)))
-        pager.shift(len(nums))
+        pager.set_shift(len(nums))
 
         ans = hello_pb2.Numbers(nums=nums,
                                 next_page_token=pager.next_page_token)
+        print("посчитались")
         return ans
+        print("ответ вернули, но продолжаем закрывать ресурсы")
+
 
 
 def serve():

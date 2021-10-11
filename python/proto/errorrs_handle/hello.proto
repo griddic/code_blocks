@@ -11,4 +11,5 @@ service Upper {
 
 message Player {
   string name = 1;
+  optional string otchestvo = 2;
 }
