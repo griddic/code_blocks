@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package upper;
+
+option go_package = "github.com/griddic/grpc_playground";
+
+import "google/protobuf/timestamp.proto";
+
+
+service Upper {
+  rpc Up (Player) returns (Player) {};
+};
+
+message Player {
+  string name = 1;
+  optional string otchestvo = 2;
+  enum Sex {
+    SEX_UNSPECIFIED = 0;
+    MALE = 1;
+    FEMALE = 2;
+  }
+  Sex sex = 3;
+  google.protobuf.Timestamp created_at = 4;
+  map<string, string> labels = 5;
+  oneof measure {
+    int64 chest_size = 6;
+    string penis_length = 7;
+  }
+  int64 page_size = 8;
+}

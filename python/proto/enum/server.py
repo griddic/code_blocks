@@ -14,7 +14,6 @@ import grpc
 import grpc_interceptor
 from grpc_interceptor import exceptions
 from grpc import RpcError
-# from adm import run_separate
 
 
 def print_error(f):
@@ -32,29 +31,23 @@ def print_error(f):
 
 
 class Greeter(hello_pb2_grpc.UpperServicer):
-    def __init__(self, server):
-        self.server = server
-
     @print_error
     def Up(self, request, context: grpc.ServicerContext):
-        # context.abort(grpc.StatusCode.UNAUTHENTICATED, "cococ")
-        # context.abort_with_status(grpc.StatusCode.CANCELLED)
-        # time.sleep(3)
-        request.ByteSize()
+        request: hello_pb2.Player
+        sex = request.sex
+        print(sex)
         return hello_pb2.Player(name=str(request.name).upper())
 
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10),
                          )
-    hello_pb2_grpc.add_UpperServicer_to_server(Greeter(server), server)
+    hello_pb2_grpc.add_UpperServicer_to_server(Greeter(), server)
     server.add_insecure_port('[::]:50051')
 
     h = server._state.generic_handlers[0]
     print("__>>>", h)
     server.start()
-
-    # asyncio.run(run_separate())
 
     server.wait_for_termination()
 

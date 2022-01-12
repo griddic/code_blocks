@@ -1,0 +1,71 @@
+koko 0
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 1
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 2
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 3
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 4
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 5
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 6
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 7
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 8
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+koko 9
+[Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/griddic/PycharmProjects/github/griddic/code_blocks/python/detattached_process/sub.py", line 11, in <module>
+    print(uri, inp, file=sys.stdout)
+BrokenPipeError: [Errno 32] Broken pipe
+
+NoMoreData
