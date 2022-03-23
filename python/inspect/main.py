@@ -1,33 +1,35 @@
 import inspect
 import logging
+import sys
 
 
-def lookup_logger(name=None):
+def lookup_logger(child_name=None):
     stack = []
-    for frame_info in inspect.stack()[1:]:  # первый frame - это эта же функция
-        if _logger := frame_info.frame.f_locals.get('logger', None):
+    frame = inspect.currentframe()
+    while frame:=frame.f_back:
+        if _logger := frame.f_locals.get('logger', None):
             if isinstance(_logger, logging.Logger):
                 if len(stack) == 0:
                     # идиотская ситуация, когда объявленна переменная logging, но хочется воспользоваться этой функцией
                     return _logger
-                return _logger.getChild(name or '.'.join(stack[::-1]))
-        if _self := frame_info.frame.f_locals.get('self', None):
+                return _logger.getChild(child_name or '.'.join(stack[::-1]))
+        if _self := frame.f_locals.get('self', None):
             try:
-                # не хочу разбираться кто там из них будет обычнм аттрибутом, кто пропертёй, кто дескриптором данных
-                # поэтом https://docs.python.org/2/glossary.html#term-eafp
+                # не хочу разбираться кто там из них будет обычным аттрибутом, кто пропертёй, кто дескриптором данных
+                # поэтому https://docs.python.org/2/glossary.html#term-eafp
                 _logger = _self.logger
             except AttributeError:
                 pass
             else:
                 if isinstance(_logger, logging.Logger):
-                    return _logger.getChild(name or '.'.join(
-                        [frame_info.function] + stack[::-1]
+                    return _logger.getChild(child_name or '.'.join(
+                        [frame.f_code.co_name] + stack[::-1]
                     ))
-        stack.append(frame_info.function)
+        stack.append(frame.f_code.co_name)
 
     if len(stack) > 0:
         stack[-1] = 'root'  # show `root` instead or `<module>` startup
-    return logging.root.getChild(name or '.'.join(stack[::-1]))
+    return logging.root.getChild(child_name or '.'.join(stack[::-1]))
 
 
 def inner(text='koko'):

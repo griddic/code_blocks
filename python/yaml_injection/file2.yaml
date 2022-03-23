@@ -1,0 +1,6 @@
+second: 2
+
+common:
+  deep:
+    second: 2
+    both: 2

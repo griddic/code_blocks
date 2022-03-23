@@ -1,0 +1,6 @@
+first: 1
+
+common:
+  deep:
+    first: 1
+    both: 1
