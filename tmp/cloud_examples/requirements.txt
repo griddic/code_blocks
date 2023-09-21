@@ -1,7 +1,7 @@
 certifi==2023.7.22
 cffi==1.15.1
 charset-normalizer==3.2.0
-cryptography==41.0.3
+cryptography==41.0.4
 googleapis-common-protos==1.60.0
 grpcio==1.56.2
 idna==3.4
