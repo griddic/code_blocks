@@ -1,0 +1,26 @@
+phantom:
+  enabled: true
+  package: yandextank.plugins.Phantom
+  address: target:8000
+  ammo_type: uri
+  load_profile:
+    load_type: rps
+    schedule: line(1,3,10s)
+  ssl: false
+  instances: 10
+  uris:
+    - /
+telegraf:
+  config:
+    hosts:
+      localhost: null
+    metrics:
+      cpu: null
+      mem: null
+      diskio: null
+      net: null
+      netstat: null
+      system: null
+      kernel: null
+  enabled: true
+  package: yandextank.plugins.Telegraf

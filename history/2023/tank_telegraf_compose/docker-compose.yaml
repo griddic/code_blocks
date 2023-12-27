@@ -1,0 +1,14 @@
+version: '3'
+services:
+  target:
+    build: target
+    ports:
+      - 8000:8000
+      - 22:22
+  tank:
+    depends_on:
+      - target
+
+    build: tank
+    volumes:
+      - ./.mount:/var/loadtest
